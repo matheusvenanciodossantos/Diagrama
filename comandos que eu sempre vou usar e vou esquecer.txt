@@ -1,0 +1,5 @@
+namespace:diagrma
+Shell.NavBarIsVisible="false"
+<Image Source="background.jpg"
+        Aspect="AspectFill"/>
+              

@@ -1,10 +1,13 @@
-﻿namespace diagrma;
+﻿using Microsoft.Maui.Controls;
 
-public partial class MainPage : ContentPage
+namespace diagrma
 {
-	public MainPage()
+    public partial class MainPage : ContentPage
     {
-        InitializeComponent();
+        public MainPage()
+        {
+            InitializeComponent();
+        }
     }
 }
 
