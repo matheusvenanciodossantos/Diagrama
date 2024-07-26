@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diagrma.MainPage"
              BackgroundColor="Black"
-             Padding="20"
+             Padding="0"
              Shell.NavBarIsVisible="false">
 
-    <Grid VerticalOptions="CenterAndExpand" 
-    HorizontalOptions="CenterAndExpand">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
@@ -28,18 +27,21 @@
                 Aspect="AspectFill"
                 Grid.RowSpan="13"/>
 
-        <Label Text="O que deseja?"
+        <Label Text="O QUE DESEJA?"
                FontSize="24"
+               FontAttributes="Bold"
                TextColor="White"
                HorizontalOptions="Center"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+               Grid.Row="0"/>
 
         <BoxView HeightRequest="2"
                  Color="White"
+                 Margin="32"
                  WidthRequest="200"
                  HorizontalOptions="Center"
                  VerticalOptions="Start"
-                 Grid.Row="1" />
+                 Grid.Row="0" />
 
         <Button Text="CLIENTES"
                 BackgroundColor="Transparent"
@@ -53,6 +55,7 @@
 
         <Button Text="FORNECEDOR"
                 BackgroundColor="Transparent"
+                Clicked="PaginaFornecedor"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"

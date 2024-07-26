@@ -8,6 +8,14 @@ namespace diagrma
         {
             InitializeComponent();
         }
+            private void PaginaFornecedor(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+            Application.Current.MainPage = new CadastroFornecedorPage();
+        }
+    
+    
     }
+
 }
 

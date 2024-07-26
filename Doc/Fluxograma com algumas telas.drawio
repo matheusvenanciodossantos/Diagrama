@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" version="24.7.4" pages="9">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" version="24.7.5" pages="9">
   <diagram name="Cliente" id="WX7Fgun8oqsMYBenGJfl">
     <mxGraphModel dx="1434" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -411,7 +411,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="3yx1qMSNNwl3Nu_6h322" name="Telas dos Fornecedores">
-    <mxGraphModel dx="8824" dy="3910" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FCFCFC" math="0" shadow="0">
+    <mxGraphModel dx="5751" dy="2234" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FCFCFC" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -751,13 +751,13 @@
           <mxGeometry x="2710" y="1180" width="220" height="34.5" as="geometry" />
         </mxCell>
         <mxCell id="PE2NdxzVtWC6Yi61_fEB-5" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 30px;&quot;&gt;Cadastro concluído&amp;nbsp;com sucesso&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#d5e8d4;sketch=1;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2590" y="1528.5" width="460" height="130" as="geometry" />
+          <mxGeometry x="797" y="937.5" width="460" height="130" as="geometry" />
         </mxCell>
         <mxCell id="PE2NdxzVtWC6Yi61_fEB-6" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 29px;&quot;&gt;Atualizado concluído&amp;nbsp;com sucesso&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#d5e8d4;sketch=1;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2590" y="1720" width="460" height="130" as="geometry" />
+          <mxGeometry x="797" y="1115" width="460" height="130" as="geometry" />
         </mxCell>
         <mxCell id="PE2NdxzVtWC6Yi61_fEB-7" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Cadastro deletado com sucesso&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#f8cecc;sketch=1;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="2590" y="1905" width="460" height="130" as="geometry" />
+          <mxGeometry x="787" y="1286" width="460" height="130" as="geometry" />
         </mxCell>
         <mxCell id="PE2NdxzVtWC6Yi61_fEB-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.44;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="HfYugE3wY9Jj5jZCgnV1-19" target="PE2NdxzVtWC6Yi61_fEB-1" edge="1">
           <mxGeometry relative="1" as="geometry" />

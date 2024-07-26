@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diagrma.CadastroFornecedorPage"
+             BackgroundColor="LightGray"
+             Shell.NavBarIsVisible="false">
+
+    <Grid Margin= "10">
+        
+       <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+        <Label Text="Cadastro Fornecedor"
+               FontSize="36"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Grid.Row="0" />
+
+        <Label Text="Nome Do Fornecedor"
+               FontSize="24"
+               FontAttributes="Bold" 
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Grid.Row="2" />
+
+        <Entry Placeholder="Nome Do Fornecedor"
+               PlaceholderColor="LightGray"
+               Grid.Row="3"
+               BackgroundColor="White"/>
+
+        <Label Text="Telefone Do Fornecedor"
+               FontSize="18"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               FontAttributes="Bold"
+               TextColor="Black"
+               Grid.Row="4" />
+
+        <Grid Grid.Row="5" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry Placeholder="(DDD)"
+                   PlaceholderColor="LightGray"
+                   BackgroundColor="White"
+                   Grid.Column="0"/>
+            <Entry Placeholder="9 9999-9999"
+                   PlaceholderColor="LightGray"
+                   BackgroundColor="White"
+                   Grid.Column="1"/>
+        </Grid>
+
+        <Label Text="CNPJ"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="6" />
+
+        <Entry Placeholder="CNJP da Empresa"
+               PlaceholderColor="LightGray"
+               Grid.Row="7"
+               BackgroundColor="White"/>
+
+        <Label Text="Endereço Do Fornecedor"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="8" />
+
+        <Entry Placeholder="Endereço da empresa"
+               PlaceholderColor="LightGray"
+               Grid.Row="9"
+               BackgroundColor="White"/>
+
+        <Grid Grid.Row="11" ColumnSpacing="50" Padding="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Cancelar"
+                    BackgroundColor="Transparent"
+                    TextColor="Red"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="0"
+                    Clicked="OnCancelClicked"/>
+            
+            <Button Text="Salvar"
+                    BackgroundColor="Transparent"
+                    TextColor="Green"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="1"
+                    Clicked="OnSaveClicked"/>   
+        </Grid>
+    </Grid>
+</ContentPage>
