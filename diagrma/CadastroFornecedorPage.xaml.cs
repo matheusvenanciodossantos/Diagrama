@@ -12,8 +12,7 @@ namespace diagrma
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
-            if (Application.Current != null)
-            Application.Current.MainPage = new MainPage();
+            // Lidar com o clique do botão cancelar
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
@@ -23,21 +22,19 @@ namespace diagrma
 
             if (isValid)
             {
-                // Exibir mensagem de sucesso
-                SucessoFrame.IsVisible = true;
-                ErroFrame.IsVisible = false;
+                // Exibir mensagem de sucesso com animação de fade-in
+                await ShowFrameWithFadeIn(SucessoFrame);
 
-                // Ocultar mensagem de sucesso após 3 segundos
-                await HideFrameAfterDelay(SucessoFrame, 3000);
+                // Ocultar mensagem de sucesso após 3 segundos com animação de fade-out
+                await HideFrameWithFadeOut(SucessoFrame, 3000);
             }
             else
             {
-                // Exibir mensagem de erro
-                SucessoFrame.IsVisible = false;
-                ErroFrame.IsVisible = true;
+                // Exibir mensagem de erro com animação de fade-in
+                await ShowFrameWithFadeIn(ErroFrame);
 
-                // Ocultar mensagem de erro após 3 segundos
-                await HideFrameAfterDelay(ErroFrame, 3000);
+                // Ocultar mensagem de erro após 3 segundos com animação de fade-out
+                await HideFrameWithFadeOut(ErroFrame, 3000);
             }
         }
 
@@ -58,9 +55,17 @@ namespace diagrma
             return true;
         }
 
-        private async Task HideFrameAfterDelay(Frame frame, int delay)
+        private async Task ShowFrameWithFadeIn(Frame frame)
+        {
+            frame.Opacity = 0;
+            frame.IsVisible = true;
+            await frame.FadeTo(1, 500); // 500ms de animação para fade-in
+        }
+
+        private async Task HideFrameWithFadeOut(Frame frame, int delay)
         {
             await Task.Delay(delay);
+            await frame.FadeTo(0, 500); // 500ms de animação para fade-out
             frame.IsVisible = false;
         }
     }
