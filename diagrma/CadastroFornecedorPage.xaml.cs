@@ -12,7 +12,8 @@ namespace diagrma
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
-            // Lidar com o clique do botão cancelar
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)

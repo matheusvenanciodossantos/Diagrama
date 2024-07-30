@@ -33,11 +33,11 @@
                VerticalOptions="Start"
                Grid.Row="2" />
         <Entry x:Name="NomeClienteEntry"
-               Placeholder="Nome Do Fornecedor"
+               Placeholder="Nome Do Cliente"
                PlaceholderColor="LightGray"
                Grid.Row="3"
                BackgroundColor="White" />
-        <Label Text="Telefone Do Fornecedor"
+        <Label Text="Telefone Do Cliente"
                FontSize="18"
                HorizontalOptions="Start"
                VerticalOptions="Start"

@@ -45,7 +45,7 @@
 
         <Button Text="CLIENTES"
                 BackgroundColor="Transparent"
-                Clicked="ClikedFornecedor"
+                Clicked="ClikedCliente"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"
@@ -56,7 +56,7 @@
 
         <Button Text="FORNECEDOR"
                 BackgroundColor="Transparent"
-                Clicked="ClikedClientes"
+                Clicked="ClikedFornecedor"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"
