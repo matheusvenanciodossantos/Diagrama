@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diagrma.MateriaPrimaPage"
+             BackgroundColor="LightGray"
+             Shell.NavBarIsVisible="false">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Text="Cadastro Matéria-Prima"
+               FontSize="36"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Grid.Row="0" />
+        <Label Text="Nome Da Matéria-Prima"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Grid.Row="2" />
+        <Entry x:Name="NomeMateriaPrimaEntry"
+               Placeholder="Algodão"
+               PlaceholderColor="LightGray"
+               Grid.Row="3"
+               BackgroundColor="White" />
+                
+       <Frame x:Name="ErroFrame"
+              BackgroundColor="#ff6363"
+              BorderColor="Red"
+              CornerRadius="5"
+              Padding="0"
+              IsVisible="False"
+              Grid.Row="11"
+              HorizontalOptions="Center"
+              VerticalOptions="End"
+              HeightRequest="100">
+       
+       <StackLayout>
+              <Label Text="ERRO"
+                     FontSize="24"
+                     TextColor="Red"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Center"/>
+
+              <Label Text="Dados Inválidos"
+                           FontSize="18"
+                           TextColor="Red"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+              <Label Text="Valide os dados para conseguir concluir o cadastro"
+                           FontSize="14"
+                           TextColor="Red"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"/>
+
+              <Label Text="Verifique que o CAPS LOCK está desativado"
+                     FontSize="14"
+                     TextColor="Red"
+                     VerticalOptions="End"
+                     HorizontalOptions="Center"/>
+
+       </StackLayout>
+            </Frame>
+            <!-- Mensagem de Sucesso -->
+            <Frame x:Name="SucessoFrame"
+                   BackgroundColor="LightGreen"
+                   BorderColor="Green"
+                   CornerRadius="5"
+                   Padding="10"
+                   IsVisible="False"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End">
+
+                <Label Text="Cadastro concluído com sucesso"
+                       FontSize="18"
+                       TextColor="Green"
+                       HorizontalOptions="Center" />
+            </Frame>
+
+
+        <Label Text="Unidade de Medida (UN)"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="6" />
+        <Entry x:Name="UnidadeMedidaEntry"
+               Placeholder="Kilo (Kg)"
+               PlaceholderColor="LightGray"
+               Grid.Row="7"
+               BackgroundColor="White" />
+        <Label Text="Quantidade"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="8" />
+        <Entry x:Name="QuantidadeEntry"
+               Placeholder="10"
+               PlaceholderColor="LightGray"
+               Grid.Row="9"
+               BackgroundColor="White" />
+        <Grid Grid.Row="11"
+              ColumnSpacing="50"
+              Padding="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Cancelar"
+                    BackgroundColor="Transparent"
+                    TextColor="Red"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="0"
+                    Clicked="CancelClick" />
+            <Button Text="Salvar"
+                    BackgroundColor="Transparent"
+                    TextColor="Green"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="1"
+                    Clicked="SaveClick" />
+        </Grid>
+    </Grid>
+</ContentPage>

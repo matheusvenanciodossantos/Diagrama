@@ -17,6 +17,16 @@ namespace diagrma
             if (Application.Current != null)
                 Application.Current.MainPage = new ClientePage();
         }
+         private void ClikedMateriaPrima(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new MateriaPrimaPage();
+        }
+         private void ClikedIdTelas(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new IdTelas();
+        }
     }
 }
 
