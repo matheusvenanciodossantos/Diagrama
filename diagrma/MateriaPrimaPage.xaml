@@ -101,19 +101,19 @@
         <Entry x:Name="UnidadeMedidaEntry"
                Placeholder="Kilo (Kg)"
                PlaceholderColor="LightGray"
-               Grid.Row="7"
+               Grid.Row="6"
                BackgroundColor="White" />
         <Label Text="Quantidade"
                FontSize="18"
                TextColor="Black"
                FontAttributes="Bold"
-               Grid.Row="8" />
+               Grid.Row="7" />
         <Entry x:Name="QuantidadeEntry"
                Placeholder="10"
                PlaceholderColor="LightGray"
-               Grid.Row="9"
+               Grid.Row="8"
                BackgroundColor="White" />
-        <Grid Grid.Row="11"
+        <Grid Grid.Row="10"
               ColumnSpacing="50"
               Padding="0,20,0,0">
             <Grid.ColumnDefinitions>
