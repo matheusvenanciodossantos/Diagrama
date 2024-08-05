@@ -1884,7 +1884,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="oeGXUsPUWxGNMvAutRvq" name="ID page">
-    <mxGraphModel dx="7003" dy="375" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="7720" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2572,26 +2572,29 @@
         <mxCell id="RiL_zpGDIH1XPNSw5asD-171" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 48px;&quot;&gt;ID&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=12;fontStyle=1;verticalAlign=middle;align=left;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="-1910.5" y="3880" width="160" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-1" value="" style="rounded=1;whiteSpace=wrap;html=1;rotation=90;fillColor=#FFFFFF;gradientColor=#CCCCCC;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="-4070" y="2137.5" width="1600" height="915" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-1" value="" style="rounded=1;whiteSpace=wrap;html=1;rotation=90;fillColor=#FFFFFF;gradientColor=#CCCCCC;gradientDirection=north;" parent="1" vertex="1">
+          <mxGeometry x="-3710" y="1480" width="900" height="1600" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-2" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="-3680" y="1860" width="680" height="255" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-2" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="-3600" y="1857.5" width="680" height="142.5" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-3" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=3;rotation=-180;" vertex="1" parent="1">
-          <mxGeometry x="-3540" y="1860" width="680" height="255" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-3" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=3;rotation=-180;" parent="1" vertex="1">
+          <mxGeometry x="-3580" y="1890" width="686" height="125" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-4" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 105px;&quot;&gt;ID&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-3699" y="1960" width="860" height="30" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-4" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 105px;&quot;&gt;ID&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-3690" y="1910" width="860" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-5" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;CLIENTES&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="-3540" y="2309.5" width="480" height="102" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-5" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;CLIENTES&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-3500" y="2060" width="480" height="102" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-6" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;FORNECEDOR&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="-3540" y="2650" width="480" height="102" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-6" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;FORNECEDOR&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-3500" y="2225" width="480" height="102" as="geometry" />
         </mxCell>
-        <mxCell id="jvjBWObiyeDBJCu5ph3w-7" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;MATÉRIA-PRIMA&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="-3540" y="3010" width="480" height="102" as="geometry" />
+        <mxCell id="jvjBWObiyeDBJCu5ph3w-7" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;MATÉRIA-PRIMA&lt;/b&gt;&lt;/font&gt;" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-3500" y="2401" width="480" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="e7N_IQDwrSO8pdbZS5iN-1" value="" style="shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/5653/5653113.png;" vertex="1" parent="1">
+          <mxGeometry x="-4020" y="1850" width="110" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

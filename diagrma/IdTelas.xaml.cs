@@ -26,5 +26,10 @@ namespace diagrma
             // Navegar para a página de Matéria-Prima
             await DisplayAlert("Matéria-Prima", "Navegar para a página de Matéria-Prima", "OK");
         }
+        private void BackButton(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
+        }
     }
 }
