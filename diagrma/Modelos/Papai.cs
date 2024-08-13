@@ -2,17 +2,17 @@ namespace Modelos
 {
     public class Papai
     {
-        protected string name;
-        protected string telephone;
-        protected string address;
-        protected int id;
-        protected string cnpj_cpf;
-        protected string un_medida;
-        protected int qnt;
-        protected int id_materia_prima;
-        protected int id_produto;
-        protected int IdFornecedor;
-        protected float preco;
+        public string name;
+        public string telephone;
+        public string address;
+        public string cnpj_cpf;
+        public string un_medida;
+        public int qnt;
+        public int id_materia_prima;
+        public int id_produto;
+        public int IdFornecedor;
+        public float preco;
+        public int id;
             public void SetName(string name)
             {
                 this.name = name;
