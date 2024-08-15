@@ -11,8 +11,8 @@ namespace diagrma
 
         private async void OnClientesClicked(object sender, EventArgs e)
         {
-            // Navegar para a página de Clientes
-            await DisplayAlert("Clientes", "Navegar para a página de Clientes", "OK");
+            if (Application.Current != null)
+                Application.Current.MainPage = new IdClientesPage();
         }
 
         private async void OnFornecedorClicked(object sender, EventArgs e)

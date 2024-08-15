@@ -59,6 +59,7 @@
 
         <Button Text="CLIENTES"
                 BackgroundColor="Transparent"
+                Clicked="OnClientesClicked"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"
