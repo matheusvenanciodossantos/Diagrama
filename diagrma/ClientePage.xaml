@@ -159,7 +159,7 @@
                     FontAttributes="Bold"
                     VerticalOptions="End"
                     Grid.Column="1"
-                    Clicked="SaveClicked" />
+                    Clicked="OnSalvarDadosClicked" />
         </Grid>
     </Grid>
 </ContentPage>

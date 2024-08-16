@@ -86,16 +86,5 @@
                 WidthRequest="200"
                 HorizontalOptions="Center"
                 Grid.Row="8" />
-
-        <Button Text="Vendas"
-                BackgroundColor="Transparent"
-                Clicked="ClikedMateriaPrima"
-                TextColor="White"
-                BorderColor="White"
-                BorderWidth="1"
-                CornerRadius="5"
-                WidthRequest="200"
-                HorizontalOptions="Center"
-                Grid.Row="10" />
     </Grid>
 </ContentPage>

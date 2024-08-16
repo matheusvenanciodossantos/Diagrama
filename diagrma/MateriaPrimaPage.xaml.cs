@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
-
+using System;
+using System.Threading.Tasks;
 
 namespace diagrma
 {
@@ -19,7 +20,7 @@ namespace diagrma
         private async void SaveClick(object sender, EventArgs e)
         {
             // Validação dos dados de entrada
-            bool isValid = ValidateInputs();
+            bool isValid = await ValidateInputs(); // Chame o método assíncrono com await
 
             if (isValid)
             {
@@ -39,21 +40,41 @@ namespace diagrma
             }
         }
 
-        private bool ValidateInputs()
+        private async Task<bool> ValidateInputs()
         {
-            // Verificar se todos os campos estão preenchidos
-            if (string.IsNullOrWhiteSpace(NomeMateriaPrimaEntry.Text) ||
-                //string.IsNullOrWhiteSpace(TelefoneMateriaPrimaEntry.Text) ||
-                //string.IsNullOrWhiteSpace(TelefoneMateriaPrima2Entry.Text) ||
-                string.IsNullOrWhiteSpace(UnidadeMedidaEntry.Text) ||
-                string.IsNullOrWhiteSpace(QuantidadeEntry.Text))
+            // Exemplo de validação. Adapte conforme necessário.
+            if (string.IsNullOrEmpty(NomeMateriaPrimaEntry.Text))
             {
+                await DisplayAlert("Erro", "O campo Nome é obrigatório.", "OK");
                 return false;
             }
-
-            // Adicione validações adicionais conforme necessário (por exemplo, formato de telefone, CNPJ, etc.)
-
+            if (string.IsNullOrEmpty(UnidadeMedidaEntry.Text))
+            {
+                await DisplayAlert("Erro", "O campo Unidade de Medida é obrigatório.", "OK");
+                return false;
+            }
+            if (string.IsNullOrEmpty(QuantidadeEntry.Text) || !int.TryParse(QuantidadeEntry.Text, out _))
+            {
+                await DisplayAlert("Erro", "O campo Quantidade deve ser um número válido.", "OK");
+                return false;
+            }
             return true;
+        }
+
+        private async void ButtonSaveClick(object sender, EventArgs e)
+        {
+            var materiaPrima = new Modelos.MateriaPrima
+            {
+                Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
+                name = NomeMateriaPrimaEntry.Text,
+                un_medida = UnidadeMedidaEntry.Text,
+                qnt = QuantidadeEntry.Text
+            };
+
+            // Assumindo que MateriaPrimaControle é um membro da classe
+            MateriaPrimaControle.CriarOuAtualizar(materiaPrima);
+
+            // Adicione uma mensagem de sucesso ou outra ação conforme necessário.
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)

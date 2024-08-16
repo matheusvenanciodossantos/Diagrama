@@ -30,10 +30,10 @@
                     HorizontalOptions="Start"
                     Clicked="BackButton"
                     VerticalOptions="Start"
-                    HeightRequest="50"
+                    HeightRequest="70"
                     CornerRadius="25"
                     TextColor="White"
-                    BackgroundColor="Black"
+                    BackgroundColor="Transparent"
                     FontFamily="Arrows"
                     FontSize="30"
                     FontAttributes="Bold"
@@ -70,7 +70,7 @@
 
         <Button Text="FORNECEDOR"
                 BackgroundColor="Transparent"
-
+                Clicked="OnFornecedorClicked"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"
@@ -81,7 +81,7 @@
 
         <Button Text="MATÉRIA-PRIMA"
                 BackgroundColor="Transparent"
-                
+                Clicked="OnMateriaPrimaClicked"
                 TextColor="White"
                 BorderColor="White"
                 BorderWidth="1"

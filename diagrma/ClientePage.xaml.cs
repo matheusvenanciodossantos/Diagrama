@@ -1,4 +1,6 @@
 using Microsoft.Maui.Controls;
+using System.Threading.Tasks;
+
 namespace diagrma
 {
     public partial class ClientePage : ContentPage
@@ -11,13 +13,13 @@ namespace diagrma
         private void CancelClicked(object sender, EventArgs e)
         {
             if (Application.Current != null)
-            Application.Current.MainPage = new MainPage();
+                Application.Current.MainPage = new MainPage();
         }
 
         private async void SaveClicked(object sender, EventArgs e)
         {
             // Validação dos dados de entrada
-            bool isValid = ValidateInputs();
+            bool isValid = await ValidateInputs();
 
             if (isValid)
             {
@@ -39,21 +41,59 @@ namespace diagrma
             }
         }
 
-        private bool ValidateInputs()
+        private async Task<bool> ValidateInputs()
         {
-            // Verificar se todos os campos estão preenchidos
-            if (string.IsNullOrWhiteSpace(NomeClienteEntry.Text) ||
-                string.IsNullOrWhiteSpace(TelefoneClienteEntry.Text) ||
-                string.IsNullOrWhiteSpace(TelefoneCliente2Entry.Text) ||
-                string.IsNullOrWhiteSpace(CPFEntry.Text) ||
-                string.IsNullOrWhiteSpace(EnderecoClienteEntry.Text))
+            // Verifica se a Entry do Nome está vazia
+            if (string.IsNullOrEmpty(NomeEntry.Text))
             {
+                await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
                 return false;
             }
+            // Verifica se a Entry do Telefone está vazia
+            else if (string.IsNullOrEmpty(TelefoneClienteEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Telefone é obrigatório", "OK");
+                return false;
+            }
+            // Verifica se a Entry do Telefone 2 está vazia
+            else if (string.IsNullOrEmpty(TelefoneCliente2Entry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Telefone 2 é obrigatório", "OK");
+                return false;
+            }
+            // Verifica se a Entry do CPF está vazia
+            else if (string.IsNullOrEmpty(CPFEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo CPF é obrigatório", "OK");
+                return false;
+            }
+            // Verifica se a Entry do Endereço está vazia
+            else if (string.IsNullOrEmpty(EnderecoClienteEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Endereço é obrigatório", "OK");
+                return false;
+            }
+            else
+                return true;
+        }
 
-            // Adicione validações adicionais conforme necessário (por exemplo, formato de telefone, CNPJ, etc.)
+        private async void OnSalvarDadosClicked(object sender, EventArgs e)
+        {
+            var cliente = new Modelos.Cliente();
+            if (!string.IsNullOrEmpty(IdLabel.Text))
+                cliente.Id = int.Parse(IdLabel.Text);
+            else
+                cliente.Id = 0;
+            cliente.name = NomeEntry.Text;
+            cliente.telephone = TelefoneClienteEntry.Text;
+            cliente.telephone = TelefoneCliente2Entry.Text;
+            cliente.cnpj_cpf = CPFEntry.Text;
+            cliente.address = EnderecoClienteEntry.Text;
 
-            return true;
+            // Assumindo que clienteControle é um membro da classe
+            clienteControle.CriarOuAtualizar(cliente);
+
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
         }
 
         private async Task HideFrameAfterDelay(Frame frame, int delay)
@@ -63,3 +103,4 @@ namespace diagrma
         }
     }
 }
+

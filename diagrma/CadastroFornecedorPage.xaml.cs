@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
-
+using System;
+using System.Threading.Tasks;
 
 namespace diagrma
 {
@@ -19,7 +20,7 @@ namespace diagrma
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             // Validação dos dados de entrada
-            bool isValid = ValidateInputs();
+            bool isValid = await ValidateInputs(); // Use await para chamar métodos assíncronos
 
             if (isValid)
             {
@@ -39,21 +40,33 @@ namespace diagrma
             }
         }
 
-        private bool ValidateInputs()
+        private async Task<bool> ValidateInputs()
         {
-            // Verificar se todos os campos estão preenchidos
-            if (string.IsNullOrWhiteSpace(NomeFornecedorEntry.Text) ||
-                string.IsNullOrWhiteSpace(TelefoneParte1Entry.Text) ||
-                string.IsNullOrWhiteSpace(TelefoneParte2Entry.Text) ||
-                string.IsNullOrWhiteSpace(CnpjEntry.Text) ||
-                string.IsNullOrWhiteSpace(EnderecoEntry.Text))
+            // Exemplo de validação. Adapte conforme necessário.
+            if (string.IsNullOrEmpty(NomeFornecedorEntry.Text))
             {
+                await DisplayAlert("Erro", "O nome do fornecedor é obrigatório.", "OK");
                 return false;
             }
-
-            // Adicione validações adicionais conforme necessário (por exemplo, formato de telefone, CNPJ, etc.)
-
+            // Adicione mais validações conforme necessário.
             return true;
+        }
+
+        private async void OnSalvarFornecedor(object sender, EventArgs e)
+        {
+            var fornecedor = new Modelos.Fornecedor
+            {
+                Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
+                name = NomeFornecedorEntry.Text,
+                telephone = $"{TelefoneParte1Entry.Text}, {TelefoneParte2Entry.Text}", // Supondo que você deseja juntar os dois números de telefone
+                cnpj_cpf = CnpjEntry.Text,
+                address = EnderecoEntry.Text
+            };
+
+            // Assumindo que FornecedorControle é um membro da classe
+            FornecedorControle.CriarOuAtualizar(fornecedor);
+
+            // Adicione uma mensagem de sucesso ou outra ação conforme necessário.
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)

@@ -2,9 +2,9 @@ using Microsoft.Maui.Controls;
 
 namespace diagrma
 {
-    public partial class IdClientesPage : ContentPage
+    public partial class IdMateriaPrimaPage : ContentPage
     {
-        public IdClientesPage()
+        public IdMateriaPrimaPage()
         {
             InitializeComponent();
         }

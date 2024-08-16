@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="diagrma.IdClientesPage"
+             x:Class="diagrma.IdMateriaPrimaPage"
              BackgroundColor="pink"
              Title="ID dos Clientes">
     <Grid Margin="10">
@@ -24,8 +24,7 @@
                  FontAttributes="Bold"
                  Grid.Row="0"/>
 
-
-        <Label Text="ID dos Clientes"
+        <Label Text="ID dos Materia-Prima"
                FontSize="24"
                FontAttributes="Bold"
                HorizontalOptions="Center"
@@ -89,7 +88,7 @@
                         HorizontalOptions="Start"
                         Margin="5"/>
 
-                <Label Text="CPF"
+                <Label Text="Quantidade"
                         FontAttributes="Bold"
                         Grid.Row="0"
                         Grid.Column="2"
@@ -107,12 +106,12 @@
                         Grid.Column="0"
                         VerticalOptions="Start"/>
 
-                <Label Text="João Silva"
+                <Label Text="Botão"
                         Grid.Row="1"
                         Grid.Column="1"
                         VerticalOptions="Start"/>
 
-                <Label Text="123.456.789-00"
+                <Label Text="300"
                         Grid.Row="1"
                         Grid.Column="2"
                         VerticalOptions="Start"/>

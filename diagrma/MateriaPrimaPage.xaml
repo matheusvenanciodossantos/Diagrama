@@ -133,7 +133,7 @@
                     FontAttributes="Bold"
                     VerticalOptions="End"
                     Grid.Column="1"
-                    Clicked="SaveClick" />
+                    Clicked="ButtonSaveClick" />
         </Grid>
     </Grid>
 </ContentPage>
