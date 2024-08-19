@@ -68,7 +68,7 @@ namespace diagrma
                 Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
                 name = NomeMateriaPrimaEntry.Text,
                 un_medida = UnidadeMedidaEntry.Text,
-                qnt = QuantidadeEntry.Text
+                qnt = QuantidadeEntry.Text.ToString(),
             };
 
             // Assumindo que MateriaPrimaControle é um membro da classe

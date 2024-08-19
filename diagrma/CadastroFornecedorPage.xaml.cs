@@ -1,11 +1,12 @@
-using Microsoft.Maui.Controls;
 using System;
-using System.Threading.Tasks;
-
+using Controles;
+using Microsoft.Maui.Controls;
+using Modelos;
 namespace diagrma
 {
     public partial class CadastroFornecedorPage : ContentPage
     {
+        FornecedorControle fornecedor= new FornecedorControle();
         public CadastroFornecedorPage()
         {
             InitializeComponent();
@@ -54,32 +55,28 @@ namespace diagrma
 
         private async void OnSalvarFornecedor(object sender, EventArgs e)
         {
-            var fornecedor = new Modelos.Fornecedor
+            var fornecedor = new Moldedos.Fornecedor
             {
                 Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
-                name = NomeFornecedorEntry.Text,
-                telephone = $"{TelefoneParte1Entry.Text}, {TelefoneParte2Entry.Text}", // Supondo que você deseja juntar os dois números de telefone
-                cnpj_cpf = CnpjEntry.Text,
-                address = EnderecoEntry.Text
+                name = NomeFornecedorEntry.Text
+                fornecedorControle.CriarOuAtualizar(materiaPrima);
             };
 
-            // Assumindo que FornecedorControle é um membro da classe
-            FornecedorControle.CriarOuAtualizar(fornecedor);
-
-            // Adicione uma mensagem de sucesso ou outra ação conforme necessário.
+            // Lógica para salvar o fornecedor
+            await SalvarFornecedorAsync(fornecedor);
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)
         {
             frame.Opacity = 0;
             frame.IsVisible = true;
-            await frame.FadeTo(1, 500); // 500ms de animação para fade-in
+            await frame.FadeTo(1, 500);
         }
 
         private async Task HideFrameWithFadeOut(Frame frame, int delay)
         {
             await Task.Delay(delay);
-            await frame.FadeTo(0, 500); // 500ms de animação para fade-out
+            await frame.FadeTo(0, 500);
             frame.IsVisible = false;
         }
     }

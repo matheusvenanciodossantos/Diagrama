@@ -25,17 +25,25 @@
                HorizontalOptions="Center"
                VerticalOptions="Start"
                Grid.Row="0" />
-        <Label Text="Nome Do Cliente"
+        <Label x:Name="IdLabel"
+               Text="ID"
                FontSize="24"
                FontAttributes="Bold"
                TextColor="Black"
                HorizontalOptions="Start"
                VerticalOptions="Start"
                Grid.Row="2" />
+        <Label Text="Nome Do Cliente"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Grid.Row="3" />
         <Entry x:Name="NomeClienteEntry"
                Placeholder="Nome Do Cliente"
                PlaceholderColor="LightGray"
-               Grid.Row="3"
+               Grid.Row="4"
                BackgroundColor="White" />
         <Label Text="Telefone Do Cliente"
                FontSize="18"
@@ -43,9 +51,7 @@
                VerticalOptions="Start"
                FontAttributes="Bold"
                TextColor="Black"
-               Grid.Row="4" />
-
-               
+               Grid.Row="5" />
        <Frame x:Name="ErroFrame"
               BackgroundColor="#ff6363"
               BorderColor="Red"
@@ -56,35 +62,29 @@
               HorizontalOptions="Center"
               VerticalOptions="End"
               HeightRequest="100">
-       
        <StackLayout>
               <Label Text="ERRO"
                      FontSize="24"
                      TextColor="Red"
                      VerticalOptions="Start"
                      HorizontalOptions="Center"/>
-
               <Label Text="Dados Inválidos"
                            FontSize="18"
                            TextColor="Red"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"/>
-
               <Label Text="Valide os dados para conseguir concluir o cadastro"
                            FontSize="14"
                            TextColor="Red"
                            VerticalOptions="End"
                            HorizontalOptions="Center"/>
-
               <Label Text="Verifique que o CAPS LOCK está desativado"
                      FontSize="14"
                      TextColor="Red"
                      VerticalOptions="End"
                      HorizontalOptions="Center"/>
-
        </StackLayout>
             </Frame>
-            <!-- Mensagem de Sucesso -->
             <Frame x:Name="SucessoFrame"
                    BackgroundColor="LightGreen"
                    BorderColor="Green"
@@ -93,51 +93,47 @@
                    IsVisible="False"
                    HorizontalOptions="Center"
                    VerticalOptions="End">
-
                 <Label Text="Cadastro concluído com sucesso"
                        FontSize="18"
                        TextColor="Green"
                        HorizontalOptions="Center" />
             </Frame>
-
-
-
-        <Grid Grid.Row="5"
-              ColumnSpacing="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="90" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Entry x:Name="TelefoneClienteEntry"
-                   Placeholder="(DDD)"
-                   PlaceholderColor="LightGray"
-                   BackgroundColor="White"
-                   Grid.Column="0" />
-            <Entry x:Name="TelefoneCliente2Entry"
-                   Placeholder="9 9999-9999"
-                   PlaceholderColor="LightGray"
-                   BackgroundColor="White"
-                   Grid.Column="1" />
-        </Grid>
+                     <Grid Grid.Row="6"
+                            ColumnSpacing="5">
+                     <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
+                     <Entry x:Name="TelefoneClienteEntry"
+                            Placeholder="(DDD)"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="White"
+                            Grid.Column="0" />
+                     <Entry x:Name="TelefoneCliente2Entry"
+                            Placeholder="9 9999-9999"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="White"
+                            Grid.Column="1" />
+                     </Grid>
         <Label Text="CPF"
                FontSize="18"
                TextColor="Black"
                FontAttributes="Bold"
-               Grid.Row="6" />
+               Grid.Row="7" />
         <Entry x:Name="CPFEntry"
                Placeholder="CPF do Cliente"
                PlaceholderColor="LightGray"
-               Grid.Row="7"
+               Grid.Row="8"
                BackgroundColor="White" />
         <Label Text="Endereço Do Cliente"
                FontSize="18"
                TextColor="Black"
                FontAttributes="Bold"
-               Grid.Row="8" />
+               Grid.Row="9" />
         <Entry x:Name="EnderecoClienteEntry"
                Placeholder="Endereço do Cliente"
                PlaceholderColor="LightGray"
-               Grid.Row="9"
+               Grid.Row="10"
                BackgroundColor="White" />
         <Grid Grid.Row="11"
               ColumnSpacing="50"

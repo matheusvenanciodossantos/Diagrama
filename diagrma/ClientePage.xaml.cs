@@ -1,3 +1,4 @@
+using Controles;
 using Microsoft.Maui.Controls;
 using System.Threading.Tasks;
 
@@ -5,6 +6,7 @@ namespace diagrma
 {
     public partial class ClientePage : ContentPage
     {
+        ClienteControle clienteControle= new ClienteControle();
         public ClientePage()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace diagrma
         private async Task<bool> ValidateInputs()
         {
             // Verifica se a Entry do Nome está vazia
-            if (string.IsNullOrEmpty(NomeEntry.Text))
+            if (string.IsNullOrEmpty(NomeClienteEntry.Text))
             {
                 await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
                 return false;
@@ -84,7 +86,7 @@ namespace diagrma
                 cliente.Id = int.Parse(IdLabel.Text);
             else
                 cliente.Id = 0;
-            cliente.name = NomeEntry.Text;
+            cliente.name = NomeClienteEntry.Text;
             cliente.telephone = TelefoneClienteEntry.Text;
             cliente.telephone = TelefoneCliente2Entry.Text;
             cliente.cnpj_cpf = CPFEntry.Text;
@@ -103,4 +105,5 @@ namespace diagrma
         }
     }
 }
+
 
