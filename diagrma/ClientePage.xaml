@@ -16,6 +16,7 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label Text="Cadastro Cliente"
@@ -26,7 +27,7 @@
                VerticalOptions="Start"
                Grid.Row="0" />
         <Label x:Name="IdLabel"
-               Text="ID"
+               Text="0"
                FontSize="24"
                FontAttributes="Bold"
                TextColor="Black"

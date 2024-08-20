@@ -30,7 +30,7 @@
 
               <!-- Campo IdLabel -->
               <Label x:Name="IdLabel"
-                     Text="1"
+                     Text=""
                      FontSize="18"
                      HorizontalOptions="Start"
                      VerticalOptions="Start"

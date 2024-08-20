@@ -25,6 +25,17 @@
                HorizontalOptions="Center"
                VerticalOptions="Start"
                Grid.Row="0" />
+
+               <!-- Campo IdLabel -->
+        <Label x:Name="IdLabel"
+               Text=""
+               FontSize="18"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               FontAttributes="Bold"
+               TextColor="Black"
+               Grid.Row="1"/>
+
         <Label Text="Nome Da Matéria-Prima"
                FontSize="24"
                FontAttributes="Bold"

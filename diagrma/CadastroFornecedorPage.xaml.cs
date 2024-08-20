@@ -6,7 +6,7 @@ namespace diagrma
 {
     public partial class CadastroFornecedorPage : ContentPage
     {
-        FornecedorControle fornecedor= new FornecedorControle();
+        FornecedorControle fornecedorControle= new FornecedorControle();
         public CadastroFornecedorPage()
         {
             InitializeComponent();
@@ -55,15 +55,15 @@ namespace diagrma
 
         private async void OnSalvarFornecedor(object sender, EventArgs e)
         {
-            var fornecedor = new Moldedos.Fornecedor
+            var fornecedor = new Modelos.Fornecedor
             {
                 Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
-                name = NomeFornecedorEntry.Text
-                fornecedorControle.CriarOuAtualizar(materiaPrima);
+                name = NomeFornecedorEntry.Text,
+                
             };
-
+            fornecedorControle.CriarOuAtualizar(fornecedor);
             // Lógica para salvar o fornecedor
-            await SalvarFornecedorAsync(fornecedor);
+           
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)

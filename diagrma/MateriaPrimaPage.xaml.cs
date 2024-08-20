@@ -1,3 +1,4 @@
+using Controles;
 using Microsoft.Maui.Controls;
 using System;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ namespace diagrma
 {
     public partial class MateriaPrimaPage : ContentPage
     {
+        MateriaPrimaControle materiaPrimaControle= new MateriaPrimaControle();
         public MateriaPrimaPage()
         {
             InitializeComponent();
@@ -72,14 +74,14 @@ namespace diagrma
             };
 
             // Assumindo que MateriaPrimaControle é um membro da classe
-            MateriaPrimaControle.CriarOuAtualizar(materiaPrima);
+            materiaPrimaControle.CriarOuAtualizar(materiaPrima);
 
             // Adicione uma mensagem de sucesso ou outra ação conforme necessário.
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)
         {
-            frame.Opacity = 0;
+            frame.Opacity = 1;
             frame.IsVisible = true;
             await frame.FadeTo(1, 500); // 500ms de animação para fade-in
         }

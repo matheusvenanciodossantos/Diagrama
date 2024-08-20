@@ -23,7 +23,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Image Source="background.jpg"
+        <Image Source="costura.jpg"
+                Opacity="0.5"
                 Aspect="AspectFill"
                 Grid.RowSpan="13"/>
 

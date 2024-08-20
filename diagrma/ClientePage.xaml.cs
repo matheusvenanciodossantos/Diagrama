@@ -43,7 +43,34 @@ namespace diagrma
             }
         }
 
-        private async Task<bool> ValidateInputs()
+        private async void OnSalvarDadosClicked(object sender, EventArgs e)
+        {
+            var cliente = new Modelos.Cliente();
+            if (!string.IsNullOrEmpty(IdLabel.Text))
+                cliente.Id = int.Parse(IdLabel.Text);
+            else
+                cliente.Id = 0;
+            cliente.name = NomeClienteEntry.Text;
+            cliente.telephone = TelefoneClienteEntry.Text;
+            cliente.telephone = TelefoneCliente2Entry.Text;
+            cliente.cnpj_cpf = CPFEntry.Text;
+            cliente.address = EnderecoClienteEntry.Text;
+
+            // Assumindo que clienteControle é um membro da classe
+            clienteControle.CriarOuAtualizar(cliente);
+
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
+            
+            if (Application.Current != null)
+                Application.Current.MainPage = new IdClientesPage();
+        }
+
+   private async Task HideFrameAfterDelay(Frame frame, int delay)
+        {
+            await Task.Delay(delay);
+            frame.IsVisible = false;
+        }
+    private async Task<bool> ValidateInputs()
         {
             // Verifica se a Entry do Nome está vazia
             if (string.IsNullOrEmpty(NomeClienteEntry.Text))
@@ -78,32 +105,9 @@ namespace diagrma
             else
                 return true;
         }
-
-        private async void OnSalvarDadosClicked(object sender, EventArgs e)
-        {
-            var cliente = new Modelos.Cliente();
-            if (!string.IsNullOrEmpty(IdLabel.Text))
-                cliente.Id = int.Parse(IdLabel.Text);
-            else
-                cliente.Id = 0;
-            cliente.name = NomeClienteEntry.Text;
-            cliente.telephone = TelefoneClienteEntry.Text;
-            cliente.telephone = TelefoneCliente2Entry.Text;
-            cliente.cnpj_cpf = CPFEntry.Text;
-            cliente.address = EnderecoClienteEntry.Text;
-
-            // Assumindo que clienteControle é um membro da classe
-            clienteControle.CriarOuAtualizar(cliente);
-
-            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
-        }
-
-        private async Task HideFrameAfterDelay(Frame frame, int delay)
-        {
-            await Task.Delay(delay);
-            frame.IsVisible = false;
-        }
+    
     }
+
 }
 
 
