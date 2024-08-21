@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace diagrma
 {
-    public partial class MateriaPrimaPage : ContentPage
+    public partial class CadastroMateriaPrimaPage : ContentPage
     {
         MateriaPrimaControle materiaPrimaControle= new MateriaPrimaControle();
-        public MateriaPrimaPage()
+        public CadastroMateriaPrimaPage()
         {
             InitializeComponent();
         }

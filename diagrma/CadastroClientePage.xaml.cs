@@ -1,46 +1,37 @@
 using Controles;
 using Microsoft.Maui.Controls;
+using Modelos;
 using System.Threading.Tasks;
 
 namespace diagrma
 {
-    public partial class ClientePage : ContentPage
+    public partial class CadastroClientePage : ContentPage
     {
         ClienteControle clienteControle= new ClienteControle();
-        public ClientePage()
+        public Cliente cliente;
+        public CadastroClientePage()
         {
             InitializeComponent();
         }
 
-        private void CancelClicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            if (Application.Current != null)
-                Application.Current.MainPage = new MainPage();
+            base.OnAppearing();
+
+            if (cliente != null)
+            {
+                IdLabel.Text = cliente.Id.ToString();
+                NomeClienteEntry.Text = cliente.name;
+                TelefoneClienteEntry.Text = cliente.telephone;
+                TelefoneCliente2Entry.Text = cliente.telephone;
+                CPFEntry.Text            = cliente.cnpj_cpf;
+                EnderecoClienteEntry.Text = cliente.address;
+            }
         }
 
-        private async void SaveClicked(object sender, EventArgs e)
+        void CancelClicked(object sender, EventArgs e)
         {
-            // Validação dos dados de entrada
-            bool isValid = await ValidateInputs();
 
-            if (isValid)
-            {
-                // Exibir mensagem de sucesso
-                SucessoFrame.IsVisible = true;
-                ErroFrame.IsVisible = false;
-
-                // Ocultar mensagem de sucesso após 3 segundos
-                await HideFrameAfterDelay(SucessoFrame, 3000);
-            }
-            else
-            {
-                // Exibir mensagem de erro
-                SucessoFrame.IsVisible = false;
-                ErroFrame.IsVisible = true;
-
-                // Ocultar mensagem de erro após 3 segundos
-                await HideFrameAfterDelay(ErroFrame, 3000);
-            }
         }
 
         private async void OnSalvarDadosClicked(object sender, EventArgs e)
@@ -62,14 +53,9 @@ namespace diagrma
             await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
             
             if (Application.Current != null)
-                Application.Current.MainPage = new IdClientesPage();
+                Application.Current.MainPage = new ListaClientePage();
         }
 
-   private async Task HideFrameAfterDelay(Frame frame, int delay)
-        {
-            await Task.Delay(delay);
-            frame.IsVisible = false;
-        }
     private async Task<bool> ValidateInputs()
         {
             // Verifica se a Entry do Nome está vazia
@@ -105,7 +91,12 @@ namespace diagrma
             else
                 return true;
         }
-    
+            private void BotaoVoltar(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
+        }   
+   
     }
 
 }

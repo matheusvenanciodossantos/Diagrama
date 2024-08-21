@@ -15,12 +15,12 @@ namespace diagrma
         private void ClikedCliente(object sender, EventArgs e)
         {
             if (Application.Current != null)
-                Application.Current.MainPage = new ClientePage();
+                Application.Current.MainPage = new CadastroClientePage();
         }
          private void ClikedMateriaPrima(object sender, EventArgs e)
         {
             if (Application.Current != null)
-                Application.Current.MainPage = new MateriaPrimaPage();
+                Application.Current.MainPage = new CadastroMateriaPrimaPage();
         }
          private void ClikedIdTelas(object sender, EventArgs e)
         {

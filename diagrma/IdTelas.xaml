@@ -4,7 +4,7 @@
              x:Class="diagrma.IdTelas"
              Title=""
              Shell.NavBarIsVisible="False"
-             BackgroundColor="lightgray">
+             BackgroundColor="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
