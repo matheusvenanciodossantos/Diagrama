@@ -4,7 +4,7 @@ namespace Modelos
 	public class Produto : Registro
 		{
 			public string name {get;set;}
-			public int qnt;
+			public string qnt;
 
 			public int Id { get; set; }
 

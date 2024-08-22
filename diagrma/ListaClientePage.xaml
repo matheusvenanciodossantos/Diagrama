@@ -5,14 +5,37 @@
              BackgroundColor="LightGray"
              Shell.NavBarIsVisible="false">
     <ContentPage.Content>
-        <StackLayout Padding="10">
-            <SearchBar x:Name="SearchBar"
-                       Placeholder="Buscar..."/>
+        <Grid Padding="0">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
             
+            
+            <SearchBar x:Name="SearchBar"
+                       Placeholder="Buscar..."
+                       Margin="70,0,10,0"
+                       Grid.Row="0"/> 
+            
+            <Button Text="b"
+                    HorizontalOptions="Start"
+                    Clicked="BotaoVoltarId"
+                    VerticalOptions="Start"
+                    HeightRequest="55"
+                    CornerRadius="25"
+                    TextColor="Black"
+                    BackgroundColor="transparent"
+                    FontFamily="Arrows"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    Grid.Row="0"/>
+
             
             <ListView x:Name="ListViewClientes"
                       ItemSelected="QuandoSelecionarUmItemNaLista"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      Grid.Row="1">
                 <ListView.Header>
                     <Grid BackgroundColor="LightGray"
                           Padding="5">
@@ -63,6 +86,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

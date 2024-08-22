@@ -7,6 +7,7 @@ namespace diagrma
     public partial class CadastroFornecedorPage : ContentPage
     {
         FornecedorControle fornecedorControle= new FornecedorControle();
+        public Fornecedor fornecedor;
         public CadastroFornecedorPage()
         {
             InitializeComponent();
@@ -14,33 +15,33 @@ namespace diagrma
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
-            if (Application.Current != null)
-                Application.Current.MainPage = new MainPage();
+         
         }
 
-        private async void OnSaveClicked(object sender, EventArgs e)
+        
+
+        
+
+        private async void OnSalvarFornecedor(object sender, EventArgs e)
         {
-            // Validação dos dados de entrada
-            bool isValid = await ValidateInputs(); // Use await para chamar métodos assíncronos
+            var fornecedor = new Modelos.Fornecedor();
+            if (!string.IsNullOrEmpty(IdLabel.text))
+            fornecedor.Id = int.Parse(IdLabel.text);
+            else 
+            fornecedor.Id = 0;
+            fornecedor.name = NomeFornecedorEntry.Text;
+            fornecedor.telephone = TelefoneFornecedorEntry;
+            fornecedor.telephone = TelefoneFornecedor2Entry;
+            fornecedor.cnpj_cpf = CNPJEntry;
+            fornecedor.address = EnderecoFornecedorEntry;
 
-            if (isValid)
-            {
-                // Exibir mensagem de sucesso com animação de fade-in
-                await ShowFrameWithFadeIn(SucessoFrame);
-
-                // Ocultar mensagem de sucesso após 3 segundos com animação de fade-out
-                await HideFrameWithFadeOut(SucessoFrame, 3000);
-            }
-            else
-            {
-                // Exibir mensagem de erro com animação de fade-in
-                await ShowFrameWithFadeIn(ErroFrame);
-
-                // Ocultar mensagem de erro após 3 segundos com animação de fade-out
-                await HideFrameWithFadeOut(ErroFrame, 3000);
-            }
+            fornecedorControle.CriarOuAtualizar(fornecedor);
+            
+            await DisplayAlert("Salvar, Dados salvos com sucesso!", "OK");
+            if (Application.Current != null)
+                Application.Current.MainPage = new IdTelas();
+                           
         }
-
         private async Task<bool> ValidateInputs()
         {
             // Exemplo de validação. Adapte conforme necessário.
@@ -52,32 +53,11 @@ namespace diagrma
             // Adicione mais validações conforme necessário.
             return true;
         }
-
-        private async void OnSalvarFornecedor(object sender, EventArgs e)
+        private void BotaoVoltarFornecedor(object sender, EventArgs e)
         {
-            var fornecedor = new Modelos.Fornecedor
-            {
-                Id = !string.IsNullOrEmpty(IdLabel.Text) ? int.Parse(IdLabel.Text) : 0,
-                name = NomeFornecedorEntry.Text,
-                
-            };
-            fornecedorControle.CriarOuAtualizar(fornecedor);
-            // Lógica para salvar o fornecedor
-           
-        }
-
-        private async Task ShowFrameWithFadeIn(Frame frame)
-        {
-            frame.Opacity = 0;
-            frame.IsVisible = true;
-            await frame.FadeTo(1, 500);
-        }
-
-        private async Task HideFrameWithFadeOut(Frame frame, int delay)
-        {
-            await Task.Delay(delay);
-            await frame.FadeTo(0, 500);
-            frame.IsVisible = false;
-        }
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
+        }   
+    
     }
 }

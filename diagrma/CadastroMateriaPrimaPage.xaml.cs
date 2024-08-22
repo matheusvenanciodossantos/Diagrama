@@ -21,25 +21,7 @@ namespace diagrma
 
         private async void SaveClick(object sender, EventArgs e)
         {
-            // Validação dos dados de entrada
-            bool isValid = await ValidateInputs(); // Chame o método assíncrono com await
-
-            if (isValid)
-            {
-                // Exibir mensagem de sucesso com animação de fade-in
-                await ShowFrameWithFadeIn(SucessoFrame);
-
-                // Ocultar mensagem de sucesso após 3 segundos com animação de fade-out
-                await HideFrameWithFadeOut(SucessoFrame, 3000);
-            }
-            else
-            {
-                // Exibir mensagem de erro com animação de fade-in
-                await ShowFrameWithFadeIn(ErroFrame);
-
-                // Ocultar mensagem de erro após 3 segundos com animação de fade-out
-                await HideFrameWithFadeOut(ErroFrame, 3000);
-            }
+            
         }
 
         private async Task<bool> ValidateInputs()

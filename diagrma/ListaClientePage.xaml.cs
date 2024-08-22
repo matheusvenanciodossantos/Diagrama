@@ -27,7 +27,12 @@ namespace diagrma
             Application.Current.MainPage = page;
         }
         
-    
+         private void BotaoVoltarId(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new IdTelas();
+        }   
+
     }
 
 }

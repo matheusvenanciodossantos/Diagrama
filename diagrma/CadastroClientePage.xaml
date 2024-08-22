@@ -120,11 +120,13 @@
                             <ColumnDefinition Width="*" />
                      </Grid.ColumnDefinitions>
                      <Entry x:Name="TelefoneClienteEntry"
+                            MaxLength="2"
                             Placeholder="(DDD)"
                             PlaceholderColor="LightGray"
                             BackgroundColor="White"
                             Grid.Column="0" />
                      <Entry x:Name="TelefoneCliente2Entry"
+                            MaxLength="9"
                             Placeholder="9 9999-9999"
                             PlaceholderColor="LightGray"
                             BackgroundColor="White"

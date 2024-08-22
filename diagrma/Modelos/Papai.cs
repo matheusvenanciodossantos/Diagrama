@@ -7,7 +7,7 @@ namespace Modelos
         public string address;
         public string cnpj_cpf;
         public string un_medida;
-        public int qnt;
+        public string qnt;
         public int id_materia_prima;
         public int id_produto;
         public int IdFornecedor;

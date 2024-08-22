@@ -4,121 +4,88 @@
              x:Class="diagrma.ListaFornecedorPage"
              BackgroundColor="pink"
              Title="ID dos Clientes">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ContentPage.Content>
+        <Grid Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Button  Text="b"
-                 HorizontalOptions="Start"
-                 Clicked="ButtonBack"
-                 VerticalOptions="Start"
-                 HeightRequest="50"
-                 CornerRadius="25"
-                 TextColor="Black"
-                 BackgroundColor="Transparent"
-                 FontFamily="Arrows"
-                 FontSize="30"
-                 FontAttributes="Bold"
-                 Grid.Row="0"/>
 
-        <Label Text="ID dos Fornecedor"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Grid.Row="0"
-               Margin="0,10,0,10"/>
+            <SearchBar x:Name="SearchBar"
+                       Placeholder="Buscar..."
+                       Margin="70,0,10,0"
+                       Grid.Row="0"/>
 
-        <Grid Grid.Row="1"
-                Margin="0,0,0,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Button Text="b"
+                    HorizontalOptions="Start"
+                    Clicked="BotaoVoltarId"
+                    VerticalOptions="Start"
+                    HeightRequest="55"
+                    CornerRadius="25"
+                    TextColor="Black"
+                    BackgroundColor="transparent"
+                    FontFamily="Arrows"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    Grid.Row="0"/>
 
-            <Entry Placeholder="Buscar"
-                    Grid.Column="0"
-                    PlaceholderColor="LightGray"
-                    BackgroundColor="White"/>
+
+            <ListView x:Name="ListViewFornecedor"
+                      ItemSelected="QuandoSelecionarUmItemNaListaFornecedor"
+                      HasUnevenRows="True"
+                      Grid.Row="1">
+                <ListView.Header>
+                    <Grid BackgroundColor="LightGray"
+                          Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="ID"
+                               FontAttributes="Bold"
+                               Grid.Column="0"
+                               HorizontalOptions="Start"/>
+                        <Label Text="Nome"
+                               FontAttributes="Bold"
+                               Grid.Column="1"
+                               HorizontalOptions="Start"/>
+                        <Label Text="Telefone"
+                               FontAttributes="Bold"
+                               Grid.Column="2"
+                               HorizontalOptions="Start"/>
+                        <Label Text="CPF"
+                               FontAttributes="Bold"
+                               Grid.Column="3"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding name}"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding telephone}"
+                                       Grid.Column="2"/>
+                                <Label Text="{Binding cnpj_cpf}"
+                                       Grid.Column="3"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-
-        <ScrollView Grid.Row="2">
-            
-            <Grid Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="110"/>
-                    <RowDefinition Height="120"/>
-                    <!-- Add more rows as needed -->
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="90"/>
-                </Grid.ColumnDefinitions>
-                <Frame  
-                Grid.Row="0"
-                Grid.ColumnSpan="4"
-                BackgroundColor="Gray"
-                HeightRequest="30"
-                VerticalOptions="Start"
-                Margin="-5,2,0,0"/>
-
-                <!-- Header Row -->
-                <Label  Text="ID"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text="Nome"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text="CNPJ"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text=""
-                        Grid.Row="0"
-                        Grid.Column="3"
-                        HorizontalOptions="Start"/>
-
-                <!-- Example Data Rows -->
-                <Label Text="1"
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        VerticalOptions="Start"/>
-
-                <Label Text="João Silva"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        VerticalOptions="Start"/>
-
-                <Label Text="123.456.789-00"
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        VerticalOptions="Start"/>
-                        
-
-                <!-- Add more data rows as needed -->
-            </Grid>
-        </ScrollView>
-    </Grid>
+    </ContentPage.Content>
 </ContentPage>

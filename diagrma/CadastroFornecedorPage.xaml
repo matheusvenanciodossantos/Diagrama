@@ -4,102 +4,176 @@
              x:Class="diagrma.CadastroFornecedorPage"
              BackgroundColor="LightGray"
              Shell.NavBarIsVisible="false">
-       <Grid Margin="10">
-              <Grid.RowDefinitions>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="50"/>
-                     <RowDefinition Height="*"/>
-              </Grid.RowDefinitions>
+       
+<Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-              <!-- Título da Página -->
-              <Label Text="Cadastro Fornecedor"
-                     FontSize="36"
-                     TextColor="Black"
-                     FontAttributes="Bold"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Start"
-                     Grid.Row="0"/>
+        <Button Text="b"
+                    HorizontalOptions="Start"
+                    Clicked="BotaoVoltarFornecedor"
+                    VerticalOptions="Start"
+                    HeightRequest="70"
+                    CornerRadius="25"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    FontFamily="Arrows"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    />
 
-              <!-- Campo IdLabel -->
-              <Label x:Name="IdLabel"
-                     Text=""
-                     FontSize="18"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start"
-                     FontAttributes="Bold"
-                     TextColor="Black"
-                     Grid.Row="1"/>
-
-              <!-- Campo Nome Fornecedor -->
-              <Label Text="Nome Do Fornecedor"
+        <Label Text="Cadastro Fornecedor"
+               FontSize="36"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Grid.Row="0" />
+        <Label x:Name="IdLabel"
+               Text="0"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Grid.Row="2" />
+        <Label Text="Nome Do Fornecedor"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Grid.Row="3" />
+        <Entry x:Name="NomeFornecedorEntry"
+               Placeholder="Nome Do Fornecedor"
+               PlaceholderColor="LightGray"
+               Grid.Row="4"
+               BackgroundColor="White" />
+        <Label Text="Telefone Do Fornecedor"
+               FontSize="18"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               FontAttributes="Bold"
+               TextColor="Black"
+               Grid.Row="5" />
+       <Frame x:Name="ErroFrame"
+              BackgroundColor="#ff6363"
+              BorderColor="Red"
+              CornerRadius="5"
+              Padding="0"
+              IsVisible="False"
+              Grid.Row="11"
+              HorizontalOptions="Center"
+              VerticalOptions="End"
+              HeightRequest="100">
+       <StackLayout>
+              <Label Text="ERRO"
                      FontSize="24"
-                     FontAttributes="Bold"
-                     TextColor="Black"
-                     HorizontalOptions="Start"
+                     TextColor="Red"
                      VerticalOptions="Start"
-                     Grid.Row="2"/>
-
-              <Entry x:Name="NomeFornecedorEntry"
-                     Placeholder="Nome Do Fornecedor"
-                     PlaceholderColor="LightGray"
-                     Grid.Row="3"
-                     BackgroundColor="White"/>
-
-              <!-- Campo Telefone Fornecedor -->
-              <Label Text="Telefone Do Fornecedor"
-                     FontSize="18"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start"
-                     FontAttributes="Bold"
-                     TextColor="Black"
-                     Grid.Row="4"/>
-
-              <!-- Mensagens de Erro -->
-              <Frame x:Name="ErroFrame"
-                     BackgroundColor="#ff6363"
-                     BorderColor="Red"
-                     CornerRadius="5"
-                     Padding="10"
-                     IsVisible="False"
-                     Grid.Row="5">
-                     <Label Text="Erro ao salvar os dados."
-                            TextColor="White"
-                            FontAttributes="Bold"/>
-              </Frame>
-
-              <!-- Mensagens de Sucesso -->
-              <Frame x:Name="SucessoFrame"
-                     BackgroundColor="#63ff63"
-                     BorderColor="Green"
-                     CornerRadius="5"
-                     Padding="10"
-                     IsVisible="False"
-                     Grid.Row="6">
-                     <Label Text="Dados salvos com sucesso."
-                            TextColor="White"
-                            FontAttributes="Bold"/>
-              </Frame>
-
-              <!-- Controle personalizado FornecedorControle (supondo que seja um controle customizado) -->
-              <ContentView x:Name="FornecedorControle"
-                           BackgroundColor="LightGray"
-                           Grid.Row="7"/>
-
-              <!-- Botões -->
-              <Button Text="Salvar"
-                      Grid.Row="8"
-                      Clicked="OnSaveClicked"/>
-
-              <Button Text="Cancelar"
-                      Grid.Row="9"
-                      Clicked="OnCancelClicked"/>
-       </Grid>
+                     HorizontalOptions="Center"/>
+              <Label Text="Dados Inválidos"
+                           FontSize="18"
+                           TextColor="Red"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+              <Label Text="Valide os dados para conseguir concluir o cadastro"
+                           FontSize="14"
+                           TextColor="Red"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"/>
+              <Label Text="Verifique que o CAPS LOCK está desativado"
+                     FontSize="14"
+                     TextColor="Red"
+                     VerticalOptions="End"
+                     HorizontalOptions="Center"/>
+       </StackLayout>
+            </Frame>
+            <Frame x:Name="SucessoFrame"
+                   BackgroundColor="LightGreen"
+                   BorderColor="Green"
+                   CornerRadius="5"
+                   Padding="10"
+                   IsVisible="False"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End">
+                <Label Text="Cadastro concluído com sucesso"
+                       FontSize="18"
+                       TextColor="Green"
+                       HorizontalOptions="Center" />
+            </Frame>
+                     <Grid Grid.Row="6"
+                            ColumnSpacing="5">
+                     <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
+                     <Entry x:Name="TelefoneFornecedorEntry"
+                            MaxLength="2"
+                            Placeholder="(DDD)"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="White"
+                            Grid.Column="0" />
+                     <Entry x:Name="TelefoneFornecedor2Entry"
+                            MaxLength="9"
+                            Placeholder="9 9999-9999"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="White"
+                            Grid.Column="1" />
+                     </Grid>
+        <Label Text="CNPJ"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="7" />
+        <Entry x:Name="CNPJEntry"
+               Placeholder="CNPJ do Fornecedor"
+               PlaceholderColor="LightGray"
+               Grid.Row="8"
+               BackgroundColor="White" />
+        <Label Text="Endereço Do Cliente"
+               FontSize="18"
+               TextColor="Black"
+               FontAttributes="Bold"
+               Grid.Row="9" />
+        <Entry x:Name="EnderecoFornecedorEntry"
+               Placeholder="Endereço do Cliente"
+               PlaceholderColor="LightGray"
+               Grid.Row="10"
+               BackgroundColor="White" />
+        <Grid Grid.Row="11"
+              ColumnSpacing="50"
+              Padding="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Cancelar"
+                    BackgroundColor="Transparent"
+                    TextColor="Red"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="0"
+                    Clicked="OnCancelClicked" />
+            <Button Text="Salvar"
+                    BackgroundColor="Transparent"
+                    TextColor="Green"
+                    FontAttributes="Bold"
+                    VerticalOptions="End"
+                    Grid.Column="1"
+                    Clicked="OnSalvarFornecedor" />
+        </Grid>
+    </Grid>
 </ContentPage>
