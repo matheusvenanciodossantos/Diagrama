@@ -2,43 +2,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diagrma.ListaClientePage"
              Title="Lista de Clientes"
-             BackgroundColor="LightGray"
+             BackgroundColor="Black"
              Shell.NavBarIsVisible="false">
     <ContentPage.Content>
         <Grid Padding="0">
             <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
+            <RowDefinition Height="90"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
             
-            
-            <SearchBar x:Name="SearchBar"
-                       Placeholder="Buscar..."
-                       Margin="70,0,10,0"
-                       Grid.Row="0"/> 
-            
-            <Button Text="b"
+         <Label Text="Cliente"
+                     FontSize="36"
+                     TextColor="White"
+                     FontAttributes="Bold"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Start"
+                     Grid.Row="0"/>
+
+        <Image Source="costura.jpg"
+                Opacity="0.5"
+                Aspect="AspectFill"
+                Grid.RowSpan="13"/>
+
+                
+
+                <Button Text="b"
                     HorizontalOptions="Start"
                     Clicked="BotaoVoltarId"
                     VerticalOptions="Start"
                     HeightRequest="55"
                     CornerRadius="25"
-                    TextColor="Black"
+                    TextColor="White"
                     BackgroundColor="transparent"
                     FontFamily="Arrows"
                     FontSize="30"
                     FontAttributes="Bold"
                     Grid.Row="0"/>
 
+                    
             
+
             <ListView x:Name="ListViewClientes"
                       ItemSelected="QuandoSelecionarUmItemNaLista"
                       HasUnevenRows="True"
                       Grid.Row="1">
                 <ListView.Header>
-                    <Grid BackgroundColor="LightGray"
-                          Padding="5">
+                    <Grid Padding="5">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -48,17 +58,21 @@
                         <Label Text="ID"
                                FontAttributes="Bold"
                                Grid.Column="0"
+                               TextColor="White"
                                HorizontalOptions="Start"/>
                         <Label Text="Nome"
                                FontAttributes="Bold"
+                               TextColor="White"
                                Grid.Column="1"
                                HorizontalOptions="Start"/>
                         <Label Text="Telefone"
                                FontAttributes="Bold"
+                               TextColor="White"
                                Grid.Column="2"
                                HorizontalOptions="Start"/>
                         <Label Text="CPF"
                                FontAttributes="Bold"
+                               TextColor="White"
                                Grid.Column="3"
                                HorizontalOptions="Start"/>
                     </Grid>
@@ -74,12 +88,16 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Id}"
+                                        TextColor="White"
                                        Grid.Column="0"/>
                                 <Label Text="{Binding name}"
+                                        TextColor="White"
                                        Grid.Column="1"/>
                                 <Label Text="{Binding telephone}"
+                                       TextColor="White"
                                        Grid.Column="2"/>
                                 <Label Text="{Binding cnpj_cpf}"
+                                       TextColor="White"
                                        Grid.Column="3"/>
                             </Grid>
                         </ViewCell>

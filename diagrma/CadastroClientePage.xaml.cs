@@ -29,6 +29,12 @@ namespace diagrma
             }
         }
 
+        void BotaoVoltar(object sender, EventArgs e)
+        {
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
+        }   
+        
         void CancelClicked(object sender, EventArgs e)
         {
 
@@ -91,11 +97,7 @@ namespace diagrma
             else
                 return true;
         }
-            private void BotaoVoltar(object sender, EventArgs e)
-        {
-            if (Application.Current != null)
-                Application.Current.MainPage = new MainPage();
-        }   
+            
    
     }
 

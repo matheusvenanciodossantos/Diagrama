@@ -2,123 +2,107 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diagrma.ListaMateriaPrimaPage"
-             BackgroundColor="pink"
+             BackgroundColor="Black"
              Title="ID dos Clientes">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ContentPage.Content>
+        <Grid Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Button  Text="b"
-                 HorizontalOptions="Start"
-                 Clicked="ButtonBack"
-                 VerticalOptions="Start"
-                 HeightRequest="50"
-                 CornerRadius="25"
-                 TextColor="Black"
-                 BackgroundColor="Transparent"
-                 FontFamily="Arrows"
-                 FontSize="30"
-                 FontAttributes="Bold"
-                 Grid.Row="0"/>
 
-        <Label Text="ID dos Materia-Prima"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Grid.Row="0"
-               Margin="0,10,0,10"/>
+              <Label Text="Matéria-Prima"
+                     FontSize="36"
+                     TextColor="White"
+                     FontAttributes="Bold"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Start"
+                     Grid.Row="0"/>
 
-        <Grid Grid.Row="1"
-                Margin="0,0,0,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Image Source="costura.jpg"
+                   Opacity="0.5"
+                   Aspect="AspectFill"
+                   Grid.RowSpan="13"/>
 
-            <Entry Placeholder="Buscar"
-                    Grid.Column="0"
-                    PlaceholderColor="LightGray"
-                    BackgroundColor="White"/>
-        </Grid>
+            <Button Text="b"
+                    HorizontalOptions="Start"
+                    Clicked="BotaoVoltarIdMP"
+                    VerticalOptions="Start"
+                    HeightRequest="55"
+                    CornerRadius="25"
+                    TextColor="White"
+                    BackgroundColor="transparent"
+                    FontFamily="Arrows"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    Grid.Row="0"/>
 
-        <ScrollView Grid.Row="2">
             
-            <Grid Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="110"/>
-                    <RowDefinition Height="120"/>
-                    <!-- Add more rows as needed -->
-                </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="90"/>
-                </Grid.ColumnDefinitions>
-                <Frame  
-                Grid.Row="0"
-                Grid.ColumnSpan="4"
-                BackgroundColor="Gray"
-                HeightRequest="30"
-                VerticalOptions="Start"
-                Margin="-5,2,0,0"/>
 
-                <!-- Header Row -->
-                <Label  Text="ID"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text="Nome"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text="Quantidade"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        HorizontalOptions="Start"
-                        Margin="5"/>
-
-                <Label Text=""
-                        Grid.Row="0"
-                        Grid.Column="3"
-                        HorizontalOptions="Start"/>
-
-                <!-- Example Data Rows -->
-                <Label Text="1"
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        VerticalOptions="Start"/>
-
-                <Label Text="Botão"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        VerticalOptions="Start"/>
-
-                <Label Text="300"
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        VerticalOptions="Start"/>
-                        
-
-                <!-- Add more data rows as needed -->
-            </Grid>
-        </ScrollView>
-    </Grid>
+            <ListView x:Name="ListViewMateriaPrima"
+                      ItemSelected="QuandoSelecionarUmItemNaListaMateriaPrima"
+                      HasUnevenRows="True"
+                      Grid.Row="1">
+                <ListView.Header>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="ID"
+                               FontAttributes="Bold"
+                               Grid.Column="0"
+                               TextColor="White"
+                               HorizontalOptions="Start"/>
+                        <Label Text="Nome"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               Grid.Column="1"
+                               HorizontalOptions="Start"/>
+                        <Label Text="Unidade"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               Grid.Column="2"
+                               HorizontalOptions="Start"/>
+                        <Label Text="quantidade"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               Grid.Column="3"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}"
+                                       TextColor="White"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding name}"
+                                       TextColor="White"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding un_medida}"
+                                       TextColor="White"
+                                       Grid.Column="2"/>
+                                <Label Text="{Binding qnt}"
+                                       TextColor="White"
+                                       Grid.Column="3"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

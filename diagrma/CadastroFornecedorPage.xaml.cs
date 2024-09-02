@@ -13,9 +13,10 @@ namespace diagrma
             InitializeComponent();
         }
 
-        private void OnCancelClicked(object sender, EventArgs e)
+        private void BotaoVoltarFornecedor(object sender, EventArgs e)
         {
-         
+         if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
         }
 
         
@@ -25,23 +26,27 @@ namespace diagrma
         private async void OnSalvarFornecedor(object sender, EventArgs e)
         {
             var fornecedor = new Modelos.Fornecedor();
-            if (!string.IsNullOrEmpty(IdLabel.text))
-            fornecedor.Id = int.Parse(IdLabel.text);
+            if (!string.IsNullOrEmpty(IdLabel.Text))
+            fornecedor.Id = int.Parse(IdLabel.Text);
             else 
             fornecedor.Id = 0;
             fornecedor.name = NomeFornecedorEntry.Text;
-            fornecedor.telephone = TelefoneFornecedorEntry;
-            fornecedor.telephone = TelefoneFornecedor2Entry;
-            fornecedor.cnpj_cpf = CNPJEntry;
-            fornecedor.address = EnderecoFornecedorEntry;
+            fornecedor.telephone = TelefoneFornecedorEntry.Text;
+            fornecedor.telephone = TelefoneFornecedor2Entry.Text;
+            fornecedor.cnpj_cpf = CNPJEntry.Text;
+            fornecedor.address = EnderecoFornecedorEntry.Text;
 
             fornecedorControle.CriarOuAtualizar(fornecedor);
             
-            await DisplayAlert("Salvar, Dados salvos com sucesso!", "OK");
+            await DisplayAlert("Salvar"," Dados salvos com sucesso!", "OK");
+
             if (Application.Current != null)
-                Application.Current.MainPage = new IdTelas();
+                Application.Current.MainPage = new ListaFornecedorPage();
                            
         }
+
+       
+
         private async Task<bool> ValidateInputs()
         {
             // Exemplo de validação. Adapte conforme necessário.
@@ -53,11 +58,6 @@ namespace diagrma
             // Adicione mais validações conforme necessário.
             return true;
         }
-        private void BotaoVoltarFornecedor(object sender, EventArgs e)
-        {
-            if (Application.Current != null)
-                Application.Current.MainPage = new MainPage();
-        }   
     
     }
 }

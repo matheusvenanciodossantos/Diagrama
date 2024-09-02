@@ -1,5 +1,6 @@
 using Controles;
 using Microsoft.Maui.Controls;
+using Modelos;
 
 namespace diagrma
 {
@@ -13,7 +14,7 @@ namespace diagrma
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ListViewFornecedor.ItemsSource =FornecedorControle.LerTodos();
+            ListViewFornecedor.ItemsSource =fornecedorControle.LerTodos();
         }
         void QuandoSelecionarUmItemNaListaFornecedor(object sender, SelectedItemChangedEventArgs e)
         {
@@ -23,6 +24,10 @@ namespace diagrma
 
         }
 
-        
+        private void BotaoVoltarId(object sender, EventArgs e)
+        {
+         if (Application.Current != null)
+                Application.Current.MainPage = new IdTelas();
+        }
     }
 }

@@ -1,5 +1,6 @@
 using Controles;
 using Microsoft.Maui.Controls;
+using Modelos;
 using System;
 using System.Threading.Tasks;
 
@@ -8,6 +9,11 @@ namespace diagrma
     public partial class CadastroMateriaPrimaPage : ContentPage
     {
         MateriaPrimaControle materiaPrimaControle= new MateriaPrimaControle();
+        internal MateriaPrima MateriaPrima;
+        internal MateriaPrima materiaprima;
+
+        public MateriaPrima Materiaprima { get; internal set; }
+
         public CadastroMateriaPrimaPage()
         {
             InitializeComponent();
@@ -19,9 +25,10 @@ namespace diagrma
                 Application.Current.MainPage = new MainPage();
         }
 
-        private async void SaveClick(object sender, EventArgs e)
+        private void BotaoVoltarMateriaPrima(object sender, EventArgs e)
         {
-            
+            if (Application.Current != null)
+                Application.Current.MainPage = new MainPage();
         }
 
         private async Task<bool> ValidateInputs()
@@ -58,7 +65,11 @@ namespace diagrma
             // Assumindo que MateriaPrimaControle é um membro da classe
             materiaPrimaControle.CriarOuAtualizar(materiaPrima);
 
-            // Adicione uma mensagem de sucesso ou outra ação conforme necessário.
+            await DisplayAlert("Salvar"," Dados salvos com sucesso!", "OK");
+
+            if (Application.Current != null)
+                Application.Current.MainPage = new ListaMateriaPrimaPage();
+                           
         }
 
         private async Task ShowFrameWithFadeIn(Frame frame)
