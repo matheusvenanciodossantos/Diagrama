@@ -4,6 +4,7 @@
              x:Class="diagrma.CadastroClientePage"
              BackgroundColor="Black"
              Shell.NavBarIsVisible="false">
+<ScrollView>             
        <Grid Margin="2">
               <Grid.RowDefinitions>
                      <RowDefinition Height="*"/>
@@ -183,4 +184,5 @@
                              Clicked="OnSalvarDadosClicked"/>
               </Grid>
        </Grid>
+</ScrollView>
 </ContentPage>

@@ -4,6 +4,7 @@
              x:Class="diagrma.CadastroMateriaPrimaPage"
              BackgroundColor="Black"
              Shell.NavBarIsVisible="false">
+<ScrollView>
     <Grid Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -167,4 +168,5 @@
                     Clicked="ButtonSaveClick" />
         </Grid>
     </Grid>
+</ScrollView>    
 </ContentPage>

@@ -5,6 +5,7 @@
              BackgroundColor="Black"
              Title="ID dos Clientes">
     <ContentPage.Content>
+    <ScrollView>
         <Grid Padding="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="90"/>
@@ -103,5 +104,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

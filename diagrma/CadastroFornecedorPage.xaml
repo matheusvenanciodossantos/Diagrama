@@ -4,7 +4,7 @@
              x:Class="diagrma.CadastroFornecedorPage"
              BackgroundColor="Black"
              Shell.NavBarIsVisible="false">
-       
+<ScrollView>
 <Grid Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -184,4 +184,5 @@
                     Clicked="OnSalvarFornecedor" />
         </Grid>
     </Grid>
+</ScrollView>    
 </ContentPage>
