@@ -35,11 +35,6 @@ namespace diagrma
                 Application.Current.MainPage = new MainPage();
         }   
         
-        void CancelClicked(object sender, EventArgs e)
-        {
-
-        }
-
         private async void OnSalvarDadosClicked(object sender, EventArgs e)
         {
             var cliente = new Modelos.Cliente();
@@ -96,8 +91,22 @@ namespace diagrma
             }
             else
                 return true;
+        
         }
-            
+
+
+        private async void CancelClicked(object sender, EventArgs e)
+  {
+    
+         if (cliente == null || cliente.Id < 1)
+         await DisplayAlert("Erro", "Nenhum cliente para excluir", "ok");
+        else if (await DisplayAlert("Excluir","Tem certeza que deseja excluir esse cliente?","Excluir Cliente","cancelar")) // Caso o usuário tocar no Botão "Excluir Cliente"
+    {
+      
+        clienteControle.Apagar(cliente.Id);
+        Application.Current.MainPage = new ListaClientePage(); 
+    }
+  }    
    
     }
 

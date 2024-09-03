@@ -63,9 +63,9 @@
                      Grid.Row="3"/>
               <Entry x:Name="NomeClienteEntry"
                      Placeholder="Nome Do Cliente"
-                     PlaceholderColor="White"
+                     PlaceholderColor="lightgray"
                      Grid.Row="4"
-                     BackgroundColor="White"/>
+                     BackgroundColor="gray"/>
               <Label Text="Telefone Do Cliente"
                      FontSize="18"
                      HorizontalOptions="Start"
@@ -129,13 +129,13 @@
                             MaxLength="2"
                             Placeholder="(DDD)"
                             PlaceholderColor="LightGray"
-                            BackgroundColor="White"
+                            BackgroundColor="gray"
                             Grid.Column="0"/>
                      <Entry x:Name="TelefoneCliente2Entry"
                             MaxLength="9"
                             Placeholder="9 9999-9999"
                             PlaceholderColor="LightGray"
-                            BackgroundColor="White"
+                            BackgroundColor="gray"
                             Grid.Column="1"/>
               </Grid>
               <Label Text="CPF"
@@ -145,9 +145,10 @@
                      Grid.Row="7"/>
               <Entry x:Name="CPFEntry"
                      Placeholder="CPF do Cliente"
+                     MaxLength="15"
                      PlaceholderColor="LightGray"
                      Grid.Row="8"
-                     BackgroundColor="White"/>
+                     BackgroundColor="gray"/>
               <Label Text="Endereço Do Cliente"
                      FontSize="18"
                      TextColor="White"
@@ -155,9 +156,10 @@
                      Grid.Row="9"/>
               <Entry x:Name="EnderecoClienteEntry"
                      Placeholder="Endereço do Cliente"
+                     MaxLength="60"
                      PlaceholderColor="LightGray"
                      Grid.Row="10"
-                     BackgroundColor="White"/>
+                     BackgroundColor="gray"/>
               <Grid Grid.Row="11"
                     ColumnSpacing="50"
                     Padding="0,20,0,0">
@@ -165,7 +167,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                      </Grid.ColumnDefinitions>
-                     <Button Text="Cancelar"
+                     <Button Text="Apagar"
                              BackgroundColor="Transparent"
                              TextColor="Red"
                              FontAttributes="Bold"

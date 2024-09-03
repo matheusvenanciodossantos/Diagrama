@@ -9,8 +9,8 @@ namespace diagrma
     public partial class CadastroMateriaPrimaPage : ContentPage
     {
         MateriaPrimaControle materiaPrimaControle= new MateriaPrimaControle();
+        public MateriaPrima materiaprima;
         internal MateriaPrima MateriaPrima;
-        internal MateriaPrima materiaprima;
 
         public MateriaPrima Materiaprima { get; internal set; }
 
@@ -72,18 +72,16 @@ namespace diagrma
                            
         }
 
-        private async Task ShowFrameWithFadeIn(Frame frame)
-        {
-            frame.Opacity = 1;
-            frame.IsVisible = true;
-            await frame.FadeTo(1, 500); // 500ms de animação para fade-in
-        }
-
-        private async Task HideFrameWithFadeOut(Frame frame, int delay)
-        {
-            await Task.Delay(delay);
-            await frame.FadeTo(0, 500); // 500ms de animação para fade-out
-            frame.IsVisible = false;
-        }
+      private async void CancelClicked(object sender, EventArgs e)
+  {
+    
+         if (materiaprima == null || materiaprima.Id < 1)
+         await DisplayAlert("Erro", "Nenhum cliente para excluir", "ok");
+        else if (await DisplayAlert("Excluir","Tem certeza que deseja excluir esse cliente?","Excluir Cliente","cancelar")) 
+      
+        materiaPrimaControle.Apagar(materiaprima.Id);
+        Application.Current.MainPage = new ListaClientePage(); 
     }
-}
+  }    
+    }
+

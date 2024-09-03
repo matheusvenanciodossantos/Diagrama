@@ -59,5 +59,18 @@ namespace diagrma
             return true;
         }
     
+    private async void CancelClicked(object sender, EventArgs e)
+  {
+    
+         if (fornecedor == null || fornecedor.Id < 1)
+         await DisplayAlert("Erro", "Nenhum cliente para excluir", "ok");
+        else if (await DisplayAlert("Excluir","Tem certeza que deseja excluir esse cliente?","Excluir Cliente","cancelar")) // Caso o usuário tocar no Botão "Excluir Cliente"
+    {
+      
+        fornecedorControle.Apagar(fornecedor.Id);
+        Application.Current.MainPage = new ListaClientePage(); 
+    }
+  }    
+
     }
 }

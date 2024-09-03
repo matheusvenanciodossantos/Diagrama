@@ -65,7 +65,7 @@
                Placeholder="Algodão"
                PlaceholderColor="LightGray"
                Grid.Row="3"
-               BackgroundColor="White" />
+               BackgroundColor="gray" />
                 
        <Frame x:Name="ErroFrame"
               BackgroundColor="#ff6363"
@@ -129,9 +129,10 @@
                Grid.Row="4" />
         <Entry x:Name="UnidadeMedidaEntry"
                Placeholder="Kilo (Kg)"
+               MaxLength="6"
                PlaceholderColor="LightGray"
                Grid.Row="5"
-               BackgroundColor="White" />
+               BackgroundColor="gray" />
         <Label Text="Quantidade"
                FontSize="18"
                TextColor="White"
@@ -139,9 +140,10 @@
                Grid.Row="6" />
         <Entry x:Name="QuantidadeEntry"
                Placeholder="10"
+               MaxLength="10"
                PlaceholderColor="LightGray"
                Grid.Row="7"
-               BackgroundColor="White" />
+               BackgroundColor="gray" />
         <Grid Grid.Row="10"
               ColumnSpacing="50"
               Padding="0,20,0,0">
@@ -149,13 +151,13 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Cancelar"
+            <Button Text="Apagar"
                     BackgroundColor="Transparent"
                     TextColor="Red"
                     FontAttributes="Bold"
                     VerticalOptions="End"
                     Grid.Column="0"
-                    Clicked="CancelClick" />
+                    Clicked="CancelClicked" />
             <Button Text="Salvar"
                     BackgroundColor="Transparent"
                     TextColor="Green"
